@@ -5,22 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style src="./src/index.css"></style>
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/index.css">
     <script defer src="./src/index.js"></script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <title>Encriptador de texto</title>
 </head>
 
-<body>
+<body class="body">
 
     <div>
-        <input type='text' id='miTexto' size=200; value='' placeholder="Ingrese su mensaje aquí" onkeypress="return soloLetras(event)"/>
-        <input type="submit" value="Encriptar" onclick="encriptador()" />
-        <input type="submit" value="Desencriptar" onclick="desencriptador()" />
-        <input type="reset" value="Borrar" />
-        <p><b id='areaTexto'>Texto de salida</b></p>
-    </div>
-    
+        <div>
 
+        </div>
+        <div>
+            <img class="logo" src="./img/Logo.png">
+            <textarea class="texto" id='miTexto' value='' placeholder="Ingrese su mensaje aquí"
+                onkeypress="return soloLetras(event)" /></textarea>
+            <div class="note">
+                <p class="iconNote"><img src="./img/bi_exclamation-circle-fill.png"></p>
+                <p class="textNote">Solo letras minúsculas y sin acentos</p>
+
+            </div>
+            <div class="botones">
+                <div class="btnEncriptar">
+                    <input type="submit" class="txtEncriptar" value="Encriptar" onclick="encriptador()" />
+                </div>
+                <div class="btnDesencriptar">
+                    <input type="submit" class="txtDesencriptar" value="Desencriptar" onclick="desencriptador()" />
+                </div>
+            </div>
+            
+            <div class="result">
+                <div >
+
+                    <p id='ocultar1' class="muneco"><img src="./img/muneco.png"></p>
+                    <div  class="txtPrevius">
+                        <p id='ocultar2' class="txtPreviusTittle">Ningún mensaje fue encontrado</p>
+                        <p id='ocultar3' class="txtPreviusDesc">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    </div>
+                    <div id='areaTexto' class="txtResult"></div>
+                    <div id='idbtnCopiar' class="btnCopiar">
+                        <input type="submit" class="txtCopiar" value="Copiar texto" onclick="copiarAlPortapapeles('areaTexto')" />
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
