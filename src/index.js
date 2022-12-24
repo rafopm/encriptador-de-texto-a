@@ -8,16 +8,14 @@ function encriptador() {
     for (let i = 0; i < obj.length; i++) {
       enc = (vocales[obj[i]]) ? enc += vocales[obj[i]] : enc += obj[i];
     }
-    show('areaTexto');
-    show('idbtnCopiar');
-    
-    hide('ocultar1');
-    hide('ocultar2');
-    hide('ocultar3');
-    //hide('idprevius');
+    show(start);
+    hide(end);
     document.getElementById('areaTexto').innerHTML = enc;
     document.getElementById('miTexto').value = "";
   }
+  document.addEventListener('DOMContentLoaded', function() {
+    autosize(document.querySelectorAll('areaTexto'));
+}, false);
 }
 
 function desencriptador() {
@@ -31,16 +29,12 @@ function desencriptador() {
         i += vocales[obj[i]].length - 1;
       } else desec += obj[i]
     }
-    show('areaTexto');
-    hide('ocultar1');
-    hide('ocultar2');
-    hide('ocultar3');
+    show(start);
+    hide(end);
     document.getElementById('areaTexto').innerHTML = desec;
     document.getElementById('miTexto').value = "";
   }
 }
-
-//document.getElementById("ID_DEL_ELEMENTO").style.display = "none";
 
 function soloLetras(e) {
   var key = e.keyCode || e.which,
@@ -65,31 +59,20 @@ document.querySelector('#miTexto').onkeyup = function (e) {
   this.value = String(this.value || '').toLowerCase();
 };
 
-//div = document.getElementById('contenido');
-//div.setAttribute("class", "ocultar");
-//se ejecutara despues de 2 segundos
-// setTimeout(mostrarTexto, 2000);
-// //se ejecutara despues de 4 segundos
-setTimeout(hide('areaTexto'), 0);
-setTimeout(hide('idbtnCopiar'), 0);
-// function mostrarTexto() {
-//   var div = document.getElementsByClassName('txtPreviusTittle');
-//   div.setAttribute("class", "overlay");
-// }
-// function OcultarTexto() {
-//   var div = document.getElementsByClassName('txtResult');
-//   div.setAttribute("class", "ocultar");
-// }//end function OcultarTexto
-//activeDiv = document.querySelector('.txtResult');
+var start = ['idbtnCopiar', 'areaTexto']
+var end = ['muneco', 'txtPreviusTittle', 'txtPreviusDesc']
+setTimeout(hide(start), 0);
 
-function hide(idOcultar) {
-  var div = document.getElementById(idOcultar);
-  div.setAttribute("class", "ocultar");
+function hide(value) {
+  for (let i = 0; i < value.length; i++) {
+    document.getElementById(value[i]).style.display = 'none';
+  }
 }
 
-function show(idMostrar) {
-  var div = document.getElementById(idMostrar);
-  div.setAttribute("class", "mostrar");
+function show(value) {
+  for (let i = 0; i < value.length; i++) {
+    document.getElementById(value[i]).style.display = '';
+  }
 }
 
 function copiarAlPortapapeles(id_elemento) {

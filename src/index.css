@@ -9,18 +9,66 @@
 }
 
 .body {
+
+    width: 1000px;
+    height: 700px;
+    background: #0030de4d;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header header sidebar"
+        "contenido contenido sidebar"
+        "footer footer sidebar";
+}
+
+
+.contenedor .header {
+    grid-area: header;
+}
+
+.contenedor .contenido {
+    grid-area: contenido;
+    min-width: 1000px;
+}
+
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    grid-area: sidebar;
+}
+
+.contenedor .footer {
+    grid-area: footer;
+}
+
+/***********************************************************************/
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 0px;
     position: relative;
-    width: 1440px;
-    height: 1024px;
-    background: #F3F5FC;
+    width: 120px;
+    height: 48px;
+    left: 40px;
+    top: 40px;
 }
 
 .result {
-    position: absolute;
+    position: relative;
     width: 400px;
-    height: 944px;
-    left: 1000px;
-    top: 40px;
+    height: 700px;
+    left: 0px;
+    top: 0px;
     /* White */
     background: #FFFFFF;
     /* shadow */
@@ -28,31 +76,17 @@
     border-radius: 32px;
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 40px;
-
-    position: absolute;
-    width: 120px;
-    height: 48px;
-    left: 40px;
-    top: 40px;
-}
 
 ::placeholder {
     color: #0A3871;
 }
 
 .texto {
-    position: absolute;
-    width: 680px;
-    height: 400px;
+    position: relative;
+    width: 678px;
+    min-height: 400px;
     left: 240px;
-    top: 168px;
-
+    top: 0px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -60,9 +94,9 @@
     line-height: 150%;
     background-color: transparent;
     border: none;
+    resize: none;
     /* identical to box height, or 48px */
     /* Dark blue/dark-blue-300 */
-
     color: #0A3871;
 }
 
@@ -70,36 +104,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
+    padding: 20px;
     gap: 8px;
-
-    position: absolute;
+    position: relative;
     width: 500px;
     height: 18px;
     left: 240px;
-    top: 851px;
+    top: 0px;
 }
 
 .textNote {
     width: 400px;
     height: 18px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
     /* identical to box height, or 18px */
-
-
     /* Gray/gray-400 */
-
     color: #495057;
-
     opacity: 0.8;
-
     /* Inside auto layout */
-
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -108,10 +134,7 @@
 .iconNote {
     width: 16px;
     height: 16px;
-
-
     /* Inside auto layout */
-
     flex: none;
     order: 0;
     flex-grow: 0;
@@ -123,182 +146,116 @@
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-
-    position: absolute;
+    position: relative;
     width: 680px;
     height: 67px;
     left: 240px;
-    top: 885px;
-}
-
-.btnEncriptar {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-
-    width: 328px;
-    /* height: 67px;*/
-
-    /* Dark blue/dark-blue-300 */
-
-    background: #0A3871;
-    border-radius: 24px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-    cursor: pointer;
-}
-
-.btnDesencriptar {
-    box-sizing: border-box;
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px;
-    gap: 8px;
-
-    width: 328px;
-    height: 67px;
-
-    /* Light gray */
-
-    background: #D8DFE8;
-    /* Dark blue/dark-blue-300 */
-
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    cursor: pointer;
+    top: 0px;
 }
 
 .txtEncriptar {
-    width: 280px;
-    height: 19px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    /* Dark blue/dark-blue-300 */
+    background: #0A3871;
+    border-radius: 24px;
+    /* Inside auto layout */
+    order: 0;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
-    background: none;
+    justify-content: space-evenly;
     border: none;
     cursor: pointer;
     /* White */
-
     color: #FFFFFF;
-
-
-    /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
 }
 
 .txtDesencriptar {
-    width: 280px;
-    height: 19px;
-
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    /* Light gray */
+    background: #D8DFE8;
+    /* Dark blue/dark-blue-300 */
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    cursor: pointer;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    background: none;
-    border: none;
-    cursor: pointer;
     /* Dark blue/dark-blue-300 */
-
     color: #0A3871;
-
-
     /* Inside auto layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
 }
 
-.muneco {
-    position: absolute;
+#muneco {
+    position: relative;
     width: 336px;
     height: 304px;
     left: 20px;
-    top: 243px;
+    top: 160px;
 }
 
-.txtPrevius {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
-
-    position: absolute;
-    width: 336px;
-    height: 122px;
-    left: 20px;
-    top: 579px;
-}
-
-.txtPreviusTittle {
+#txtPreviusTittle {
     position: relative;
-    width: 336px;
+    width: 80%;
     height: 58px;
-
+    justify-content: space-evenly;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 120%;
     /* or 29px */
-
+    margin: auto;
     text-align: center;
-
     /* Gray/gray-500 */
-
     color: #343A40;
-
-
     /* Inside auto layout */
-
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
+    top: 180px;
 }
 
-.txtPreviusDesc {
+#txtPreviusDesc {
     position: relative;
-    width: 336px;
+    width: 80%;
     height: 48px;
-
+    justify-content: space-evenly;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     /* or 24px */
-
+    margin: auto;
     text-align: center;
 
     /* Gray/gray-400 */
-
+    top: 180px;
     color: #495057;
 
 
@@ -311,7 +268,7 @@
 }
 
 .txtResult {
-    position: absolute;
+    position: relative;
     width: 336px;
     height: 781px;
     left: 20px;
@@ -328,12 +285,15 @@
 }
 
 #areaTexto {
+    resize: none;
+    justify-content: space-evenly;
     position: relative;
-    width: 336px;
-    height: 781px;
+    width: 90%;
     left: 20px;
-    top: 72px;
-
+    height: 500px;
+    top: 20px;
+    margin: auto;
+    align-items: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -342,305 +302,215 @@
     /* or 36px */
     /* Gray/gray-400 */
     color: #495057;
+    border: none;
+
 }
 
 #idbtnCopiar {
-    position: relative;
     box-sizing: border-box;
-
+    justify-content: space-evenly;
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
     gap: 8px;
-
-    position: absolute;
+    position: relative;
     width: 336px;
     height: 67px;
     left: 30px;
-    top: 845px;
-
+    top: 80px;
     /* Dark blue/dark-blue-300 */
-
     border: 1px solid #0A3871;
     border-radius: 24px;
-}
-
-.txtCopiar {
-    width: 288px;
-    height: 19px;
-
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    text-align: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    /* Dark blue/dark-blue-300 */
 
+    background: white;
+    cursor: pointer;
     color: #0A3871;
 
-
-    /* Inside auto layout */
-
-    flex: none;
     order: 0;
-    flex-grow: 1;
 }
 
-.ocultar {
-    display: none;
-}
 
-.mostrar {
-    display: inline,
-}
 
-@media only screen and (max-width: 768px) {
-    .body {
-        position: relative;
-        width: 768px;
-        height: 100%;
-        /* height: 1174px;*/
+@media screen and (max-width: 768px) {
+    .contenedor {
 
-        /* Light blue/light-blue-100 */
-
-        background: #F3F5FC;
+        max-width: 768px;
+        grid-template-areas: "header header header"
+            "contenido contenido contenido"
+            "footer footer footer"
+            "sidebar sidebar sidebar";
     }
 
-    .logo {
-        position: absolute;
-        /* width: 31.09px; */
-        height: 50.58px;
-        left: 40px;
-        top: 73.42px;
+    .contenedor .contenido {
+        grid-area: contenido;
+        min-width: 768px;
+    }
+
+    .body {
+        height: auto;
+        width: 100%;
     }
 
     .texto {
-        position: absolute;
-        width: 688px;
-        height: 48px;
-        left: 40px;
-        top: 240px;
+        width: 702px;
+        left: 20px;
+        top: 60px;
+    }
 
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 150%;
-        /* identical to box height, or 48px */
-
-
-        /* Dark blue/dark-blue-300 */
-
-        color: #0A3871;
+    .logo {
+        height: 50.58px;
+        left: -20px;
+        top: 20px;
     }
 
     .note {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 8px;
-
-        position: absolute;
-        width: 229px;
-        height: 18px;
-        left: 20px;
-        top: 836px;
+        left: 10px;
+        top: 40px;
     }
-
-    .iconNote {
-        width: 16px;
-        height: 16px;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-
 
     .botones {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 24px;
-
-        position: absolute;
-        width: 688px;
-        height: 67px;
-        left: 15px;
-        top: 870px;
+        left: 35px;
+        top: 30px;
     }
 
     .result {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 32px;
-        gap: 32px;
-
-        position: relative;
-        width: 675px;
-        height: 100%;
-        left: 15px;
-        /*top: 1001px;*/
-
-        /* White */
-
-        background: #FFFFFF;
-        /* shadow */
-
-        box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
-        border-radius: 32px;
+        width: 690px;
+        height: auto;
+        left: 20px;
+        top: 50px;
+        padding: 15px;
     }
 
-    .muneco {
+    #muneco {
         display: none;
     }
 
-    .txtPrevius {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 16px;
 
-        width: 624px;
-        height: 69px;
-        top: 32px;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
+    #txtPreviusTittle {
+        top: 30px;
     }
 
-
-    .txtPreviusTittle {
-        width: 624px;
-        height: 29px;
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 120%;
-        /* identical to box height, or 29px */
-
-        text-align: center;
-
-        /* Gray/gray-500 */
-
-        color: #343A40;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        align-self: stretch;
-        flex-grow: 0;
-    }
-
-    .txtPreviusDesc {
-        width: 624px;
-        height: 24px;
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 150%;
-        /* identical to box height, or 24px */
-
-        text-align: center;
-
-        /* Gray/gray-400 */
-
-        color: #495057;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0;
+    #txtPreviusDesc {
+        top: 10px;
     }
 
     #areaTexto {
-        width: 624px;
-        height: 180px;
-
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 150%;
-        top: 32px;
-        /* or 36px */
-
-
-        /* Gray/gray-400 */
-
-        color: #495057;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
+        height: auto;
+        width: 660px;
+        left: 2px;
+        padding-bottom: 30px;
     }
 
     #idbtnCopiar {
-        box-sizing: border-box;
+        width: 690px;
+        left: 0px;
+        top: 0px;
+        bottom: 10px;
+    }
 
-        /* Auto layout */
+}
 
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        padding: 24px;
-        gap: 8px;
 
-        width: 624px;
+
+@media screen and (max-width: 375px) {
+    .contenedor {
+
+        max-width: 375px;
+        grid-template-areas: "header header header"
+            "contenido contenido contenido"
+            "footer footer footer"
+            "sidebar sidebar sidebar";
+    }
+
+    .contenedor .contenido {
+        grid-area: contenido;
+        min-width: 375px;
+    }
+
+    .body {
+        height: auto;
+        width: 100%;
+
+    }
+
+    .texto {
+        width: 340px;
+        left: 20px;
+        top: 40px;
+        font-size: 32px;
+    }
+
+    .logo {
+        height: 50.58px;
+        left: -20px;
+        top: 20px;
+    }
+
+    .note {
+        left: 10px;
+        top: 40px;
+        width: 340;
+    }
+
+    .botones {
+        left: 18px;
+        top: 30px;
+        width: 343px;
+        flex-wrap: wrap
+    }
+
+    .txtEncriptar {
+        width: 100%;
         height: 67px;
-        top: 244px;
 
-        /* Dark blue/dark-blue-300 */
+    }
 
-        border: 1px solid #0A3871;
-        border-radius: 24px;
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 1;
-        align-self: stretch;
-        flex-grow: 0;
+    .txtDesencriptar {
+        width: 100%;
+        height: 67px;
     }
 
 
+    .result {
+        width: 310px;
+        height: auto;
+        left: 20px;
+        top: 160px;
+        padding: 15px;
+    }
 
-    .ocultar {
+    #muneco {
         display: none;
     }
 
-    .mostrar {
-        display: inline,
+
+    #txtPreviusTittle {
+        top: 5px;
     }
+
+    #txtPreviusDesc {
+        top: 5px;
+    }
+
+    #areaTexto {
+        height: auto;
+        width: 310px;
+        left: 2px;
+        padding-bottom: 30px;
+    }
+
+    #idbtnCopiar {
+        width: 310px;
+        left: 0px;
+        top: 0px;
+        bottom: 10px;
+    }
+
 }
