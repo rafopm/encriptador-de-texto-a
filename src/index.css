@@ -9,20 +9,19 @@
 }
 
 .body {
-
-    width: 1000px;
     height: 700px;
-    background: #0030de4d;
+    background: #F3F5FC;
 }
 
 .contenedor {
-    width: 100%;
-    max-width: 1000px;
+    width: 1440px;
     margin: 20px auto;
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 0px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, auto);
+
+    justify-content: center;
 
     grid-template-areas: "header header sidebar"
         "contenido contenido sidebar"
@@ -36,7 +35,7 @@
 
 .contenedor .contenido {
     grid-area: contenido;
-    min-width: 1000px;
+    width: 1000px;
 }
 
 .contenedor .sidebar {
@@ -51,9 +50,8 @@
 /***********************************************************************/
 
 .logo {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:unset;
     padding: 0px;
     gap: 0px;
     position: relative;
@@ -65,6 +63,7 @@
 
 .result {
     position: relative;
+    /* display: flex; */
     width: 400px;
     height: 700px;
     left: 0px;
@@ -74,6 +73,8 @@
     /* shadow */
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
+    align-items: center;
+    
 }
 
 
@@ -269,7 +270,7 @@
 
 .txtResult {
     position: relative;
-    width: 336px;
+    max-width: 336px;
     height: 781px;
     left: 20px;
     top: 72px;
@@ -288,9 +289,9 @@
     resize: none;
     justify-content: space-evenly;
     position: relative;
-    width: 90%;
-    left: 20px;
-    height: 500px;
+    width: 85%;
+    height: 540px;
+    left: 0px;
     top: 20px;
     margin: auto;
     align-items: center;
@@ -301,25 +302,25 @@
     line-height: 150%;
     /* or 36px */
     /* Gray/gray-400 */
-    color: #495057;
+    background: #FFFFFF;
     border: none;
-
+    overflow: auto;
 }
 
 #idbtnCopiar {
+    position: relative;
     box-sizing: border-box;
     justify-content: space-evenly;
     /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction:column;
+   
     padding: 24px;
     gap: 8px;
-    position: relative;
-    width: 336px;
+    width: 90%;
     height: 67px;
-    left: 30px;
-    top: 80px;
+    left: 18px;
+    top:50px;
+    align-items: center;
     /* Dark blue/dark-blue-300 */
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -340,8 +341,7 @@
 
 @media screen and (max-width: 768px) {
     .contenedor {
-
-        max-width: 768px;
+        width: 768px;
         grid-template-areas: "header header header"
             "contenido contenido contenido"
             "footer footer footer"
@@ -349,13 +349,11 @@
     }
 
     .contenedor .contenido {
-        grid-area: contenido;
-        min-width: 768px;
+        width: 768px;
     }
 
     .body {
         height: auto;
-        width: 100%;
     }
 
     .texto {
@@ -366,7 +364,7 @@
 
     .logo {
         height: 50.58px;
-        left: -20px;
+        left: 20px;
         top: 20px;
     }
 
@@ -386,6 +384,8 @@
         left: 20px;
         top: 50px;
         padding: 15px;
+
+        flex-wrap: wrap;
     }
 
     #muneco {
@@ -402,17 +402,19 @@
     }
 
     #areaTexto {
+
         height: auto;
-        width: 660px;
+        width: 100%;
         left: 2px;
         padding-bottom: 30px;
     }
 
     #idbtnCopiar {
+ 
         width: 690px;
         left: 0px;
-        top: 0px;
-        bottom: 10px;
+        top: 10px;
+
     }
 
 }
@@ -430,8 +432,7 @@
     }
 
     .contenedor .contenido {
-        grid-area: contenido;
-        min-width: 375px;
+        width: 375px;
     }
 
     .body {
@@ -445,6 +446,7 @@
         left: 20px;
         top: 40px;
         font-size: 32px;
+        min-height: 200px;
     }
 
     .logo {
@@ -456,7 +458,11 @@
     .note {
         left: 10px;
         top: 40px;
-        width: 340;
+        width: 300px;
+    }
+
+    .textNote{
+        width: 250px;
     }
 
     .botones {
@@ -484,6 +490,7 @@
         left: 20px;
         top: 160px;
         padding: 15px;
+        flex-wrap: wrap
     }
 
     #muneco {

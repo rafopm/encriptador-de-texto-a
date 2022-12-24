@@ -10,6 +10,7 @@
     <script defer src="./src/index.js"></script>
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="shortcut icon" href="/favicon.ico" />
     <title>Encriptador de texto</title>
 </head>
 
@@ -20,8 +21,13 @@
         </header>
 
         <main class="contenido">
-            <textarea class="texto" id='miTexto' value='' placeholder="Ingrese su mensaje aquí"
-                onkeypress="return soloLetras(event)" /></textarea>
+            <!-- <textarea class="texto" id='miTexto' value='' placeholder="Ingrese su mensaje aquí"
+                onkeypress="return soloLetras(event)" /></textarea> -->
+                <!-- <blockquote contenteditable="true"> -->
+                    <p contenteditable="true" class="texto" id='miTexto' value='' placeholder="Ingrese su mensaje aquí"
+                    onkeypress="return soloLetras(event)" /></p>
+                <!-- </blockquote> -->
+
         </main>
 
         <aside class="sidebar">
@@ -36,7 +42,7 @@
                     <div>
                         <div contenteditable id='areaTexto' disabled></div>
                         <input type="submit" id='idbtnCopiar' value="Copiar texto"
-                            onclick="copiarAlPortapapeles('areaTexto')" />
+                            onclick="copiarAlPortapapeles('#areaTexto')" />
                     </div>
                 </div>
             </div>

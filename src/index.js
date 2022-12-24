@@ -1,7 +1,7 @@
 const vocales = { a: "ai", e: "enter", i: "imes", o: "ober", u: "ufat" };
 
 function encriptador() {
-  var obj = document.getElementById('miTexto').value;
+  var obj = document.querySelector('.texto').innerHTML;
   if (obj === "") alert("Debe ingresar el texto a encriptar.")
   else {
     var enc = ""
@@ -11,7 +11,7 @@ function encriptador() {
     show(start);
     hide(end);
     document.getElementById('areaTexto').innerHTML = enc;
-    document.getElementById('miTexto').value = "";
+    document.querySelector('.texto').innerHTML = "";
   }
   document.addEventListener('DOMContentLoaded', function() {
     autosize(document.querySelectorAll('areaTexto'));
@@ -21,7 +21,7 @@ function encriptador() {
 function desencriptador() {
   if (obj === "") alert("Debe ingresar el texto a encriptar.")
   else {
-    var obj = document.getElementById('miTexto').value;
+    var obj = document.querySelector('.texto').innerHTML;
     var desec = ""
     for (let i = 0; i < obj.length; i++) {
       if (vocales[obj[i]]) {
@@ -32,7 +32,7 @@ function desencriptador() {
     show(start);
     hide(end);
     document.getElementById('areaTexto').innerHTML = desec;
-    document.getElementById('miTexto').value = "";
+    document.querySelector('.texto').innerHTML = "";
   }
 }
 
@@ -77,7 +77,7 @@ function show(value) {
 
 function copiarAlPortapapeles(id_elemento) {
   var aux = document.createElement("input");
-  aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+  aux.setAttribute("value", document.querySelector(id_elemento).innerHTML);
   document.body.appendChild(aux);
   aux.select();
   document.execCommand("copy");
