@@ -312,7 +312,7 @@
     width: 85%;
     height: 540px;
     left: 0px;
-    top: 20px;
+    top: 40px;
     margin: auto;
     align-items: center;
     font-family: 'Inter';
@@ -325,6 +325,7 @@
     background: #FFFFFF;
     border: none;
     overflow: auto;
+    color: #0A3871;
 }
 
 #idbtnCopiar {
