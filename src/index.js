@@ -20,6 +20,7 @@ function encriptador() {
 }
 
 function desencriptador() {
+  var obj = document.querySelector('.texto').innerHTML;
   if (obj === "") alert("Debe ingresar el texto a encriptar.")
   else {
     var obj = document.querySelector('.texto').innerHTML;
@@ -73,4 +74,10 @@ function copiarAlPortapapeles(id_elemento) {
   aux.select();
   document.execCommand("copy");
   document.body.removeChild(aux);
+}
+
+function borraTextoInicial(){
+  var txtBorrar = document.querySelector('.textoInicial').innerHTML;
+  console.log(txtBorrar);
+  if(txtBorrar === "Ingrese su mensaje aquí..<span>&nbsp;</span>") document.querySelector('.textoInicial').innerHTML="";
 }

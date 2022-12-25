@@ -21,9 +21,8 @@
         </header>
 
         <main class="contenido">
-            <p contenteditable="true" class="texto" id='miTexto' value='' placeholder="Ingrese su mensaje aquí"
-                onkeypress="return soloLetras(event)" />
-            </p>
+            <p class='textoInicial' onclick="borraTextoInicial()" />Ingrese su mensaje aquí..<span>&#160;</span></p>
+            <p contenteditable="true"  class="texto" id='miTexto' onclick="borraTextoInicial()" onkeypress="return soloLetras(event)" /></p>
         </main>
 
         <aside class="sidebar">
@@ -32,8 +31,7 @@
                     <div>
                         <p id='muneco'><img src="./img/muneco.png"></p>
                         <p id='txtPreviusTittle'>Ningún mensaje fue encontrado</p>
-                        <p id='txtPreviusDesc'>Ingresa el texto que desees encriptar o desencriptar.
-                        </p>
+                        <p id='txtPreviusDesc'>Ingresa el texto que desees encriptar o desencriptar.</p>
                     </div>
                     <div>
                         <div contenteditable id='areaTexto' disabled></div>
@@ -56,5 +54,4 @@
         </footer>
     </div>
 </body>
-
 </html>

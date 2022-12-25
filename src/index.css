@@ -82,6 +82,7 @@
     color: #0A3871;
 }
 
+
 .texto {
     position: relative;
     width: 678px;
@@ -367,6 +368,29 @@
 
 }
 
+.textoInicial{ 
+	position: relative; 
+	float: left;
+	color: #0A3871;
+	font-size: 32px;
+    left: 240px;
+}
+
+.textoInicial span {
+    position:absolute;
+    right:0;
+    width:0;
+    height: 35px;
+    background: #F3F5FC;
+    border-left: 2px solid #000;
+    animation: escribir 5s steps(30) infinite alternate;
+}
+
+@keyframes escribir {
+    from { width: 100% }
+    to { width:0 }
+}
+
 @media screen and (max-width: 768px) {
     .contenedor {
         width: 768px;
@@ -445,6 +469,11 @@
 
     }
 
+    .textoInicial{
+        left: 50px;
+        font-size: 30px;
+        top: 70px;
+     }
 }
 
 
@@ -469,18 +498,17 @@
 
     }
 
+    .logo{
+        height: 50.58px;
+        left: 0px;
+    }
+
     .texto {
         width: 340px;
         left: 20px;
         top: 40px;
         font-size: 32px;
         min-height: 200px;
-    }
-
-    .logo {
-        height: 50.58px;
-        left: -20px;
-        top: 20px;
     }
 
     .note {
@@ -547,5 +575,11 @@
         top: 0px;
         bottom: 10px;
     }
+
+    .textoInicial{
+        left: 40px;
+        font-size: 24px;
+        top: 40px;
+     }
 
 }
