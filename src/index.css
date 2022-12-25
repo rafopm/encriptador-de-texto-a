@@ -460,6 +460,7 @@
         width: 100%;
         left: 2px;
         padding-bottom: 30px;
+        top: 10px;
     }
 
     #idbtnCopiar {
@@ -568,6 +569,7 @@
         width: 310px;
         left: 2px;
         padding-bottom: 30px;
+        top: 10px;
     }
 
     #idbtnCopiar {
