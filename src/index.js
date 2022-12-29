@@ -39,15 +39,13 @@ function desencriptador() {
 }
 
 function soloLetras(e) {
+  console.log(e);
   var key = e.keyCode || e.which,
     tecla = String.fromCharCode(key).toLowerCase(),
-    letras = " abcdefghijklmnñopqrstuvwxyz",
-    //especiales = [], //[8, 37, 39, 46],
-    tecla_especial = false;
-  if (letras.indexOf(tecla) == -1 && !tecla_especial) {
+    letras = " abcdefghijklmnñopqrstuvwxyz";
+  if (letras.indexOf(tecla) == -1 ) {
     return false;
   }
-
 }
 
 
@@ -67,14 +65,11 @@ function show(value) {
   }
 }
 
-function copiarAlPortapapeles(id_elemento) {
-  var aux = document.createElement("input");
-  aux.setAttribute("value", document.querySelector(id_elemento).innerHTML);
-  document.body.appendChild(aux);
-  aux.select();
-  document.execCommand("copy");
-  document.body.removeChild(aux);
+function copiar(id){
+  let txtCopiar = document.querySelector(id).innerHTML;
+  navigator.clipboard.writeText(txtCopiar)
 }
+
 
 function borraTextoInicial(){
   var txtBorrar = document.querySelector('.textoInicial').innerHTML;
