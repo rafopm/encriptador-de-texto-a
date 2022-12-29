@@ -39,7 +39,6 @@ function desencriptador() {
 }
 
 function soloLetras(e) {
-  console.log(e);
   var key = e.keyCode || e.which,
     tecla = String.fromCharCode(key).toLowerCase(),
     letras = " abcdefghijklmnñopqrstuvwxyz";
